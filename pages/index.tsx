@@ -8,7 +8,7 @@ export default function Home() {
             pathname: '/[username]',
             query: { username: 'marcuso123' },
           }}>
-        <a>Marcus's profile</a>
+        <a>Marcus&apos;s profile</a>
       </Link>
     </div>
   )
