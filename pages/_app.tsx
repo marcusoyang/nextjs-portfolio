@@ -1,9 +1,15 @@
 import '../styles/globals.css'
-
-import { GetServerSideProps } from 'next';
+import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react';
+import theme from '../theme'
+import Navbar from '../components/Navbar';
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <ChakraProvider theme={theme}>
+      <Navbar></Navbar>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  )
 }
 
 export default MyApp
