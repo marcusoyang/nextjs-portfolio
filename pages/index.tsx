@@ -1,16 +1,11 @@
-import styles from '../styles/Home.module.css';
-import '../styles/globals.css';
-import Link from 'next/link';
+import { Box } from "@chakra-ui/react";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div>
-      <Link prefetch={false} href={{
-            pathname: '/[username]',
-            query: { username: 'marcuso123' },
-          }}>
-        <a>Marcus&apos;s profile</a>
-      </Link>
-    </div>
+    <Box>
+      Marcus
+    </Box>
   )
 }
+
+export default Home;
