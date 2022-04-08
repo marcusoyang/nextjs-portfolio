@@ -1,13 +1,19 @@
-import '../styles/globals.css'
-import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react';
-import theme from '../theme'
-import Navbar from '../components/Navbar';
+import { Box, ChakraProvider } from '@chakra-ui/react'
+import Fonts from '../components/fonts'
+import Navbar from '../components/Navbar'
+import theme from '../lib/theme'
+import '@fontsource/raleway/400.css'
+import '@fontsource/open-sans/700.css'
+import '../styles/global.css'
 
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
-      <Navbar></Navbar>
-      <Component {...pageProps} />
+      <Fonts />
+      <Box mx={"auto"} maxW={"6xl"}>
+        <Navbar/>
+        <Component {...pageProps} />
+      </Box>
     </ChakraProvider>
   )
 }
