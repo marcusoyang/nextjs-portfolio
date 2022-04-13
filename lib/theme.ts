@@ -1,9 +1,10 @@
 //theme.ts
 import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
-import { mode } from '@chakra-ui/theme-tools'
+import { mode, StyleFunctionProps } from '@chakra-ui/theme-tools'
+import { Dict } from "@chakra-ui/utils";
 
 const styles = {
-  global: props => ({
+  global: (props: Dict<any> | StyleFunctionProps) => ({
     body: {
       bg: mode('white', '#222')(props),
     }
