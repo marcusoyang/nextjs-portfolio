@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 import {
   Box,
   Flex,
@@ -8,10 +8,11 @@ import {
   useColorMode,
   Heading,
   useColorModeValue,
-} from "@chakra-ui/react";
-import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
-import NextLink from "next/link";
-import { IoLogoGithub } from "react-icons/io5";
+  color,
+} from '@chakra-ui/react';
+import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import NextLink from 'next/link';
+import { IoLogoGithub } from 'react-icons/io5';
 interface navLinkProps {
   href: string;
   children: ReactNode;
@@ -22,7 +23,7 @@ interface navLinkProps {
 
 const NavLink: React.FC<navLinkProps> = (props) => (
   <NextLink href={props.href} passHref scroll={false}>
-    <Link style={{ textDecoration: "none" }} {...props}>
+    <Link style={{ textDecoration: 'none' }} {...props}>
       {props.children}
     </Link>
   </NextLink>
@@ -30,98 +31,122 @@ const NavLink: React.FC<navLinkProps> = (props) => (
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const hoverColor = useColorModeValue("#FFF", "#333");
+  const hoverColor = useColorModeValue('#000', '#333');
 
   return (
     <>
       <Box
-        pos={"fixed"}
-        mixBlendMode={"difference"}
+        pos={'fixed'}
+        mixBlendMode={'difference'}
         pt={8}
         px={8}
-        mx={"auto"}
-        maxW={"6xl"}
-        w="100%"
+        mx={'auto'}
+        maxW={'6xl'}
+        w='100%'
       >
         {/* <Flex h={16} alignItems={"center"} justifyContent={"space-between"}> */}
-        <NavLink href="/">
-          <Heading size={"md"} letterSpacing={"tight"} pb={1} color={"white"}>
+        <NavLink href='/'>
+          <Heading
+            size={'md'}
+            letterSpacing={'tight'}
+            mt={1}
+            pb={1}
+            fontWeight={'normal'}
+            color={'white'}
+            fontSize={26}
+          >
             Marcus O&apos;Yang
           </Heading>
         </NavLink>
         {/* </Flex> */}
       </Box>
 
-      <Flex
-        pos={"fixed"}
-        pt={8}
-        px={8}
-        justify={"right"}
-        maxW={"6xl"}
-        w="100%"
-      >
+      <Flex pos={'fixed'} pt={8} px={8} justify={'right'} maxW={'6xl'} w='100%'>
         <a
-          target="_blank"
-          href="https://github.com/marcusoyang"
-          rel="noopener noreferrer"
+          target='_blank'
+          href='https://github.com/marcusoyang'
+          rel='noopener noreferrer'
         >
           <Button
+            role='group'
             mr={5}
             maxW={300}
             minW={120}
-            w={"10vw"}
+            w={'10vw'}
             h={10}
-            variant="outline"
-            rounded="none"
+            fontSize={15}
+            variant='outline'
+            rounded='none'
             _hover={{
               bg: hoverColor,
+              color: '#FFF',
             }}
             _focus={{
-              boxShadow: "none",
+              boxShadow: 'none',
             }}
-            borderColor={colorMode === "light" ? "#222" : "#eee"}
-            bg={colorMode === "light" ? "#eee" : "#222"}
+            borderColor={colorMode === 'light' ? '#222' : '#eee'}
+            bg={colorMode === 'light' ? '#FFF' : '#222'}
           >
-            <IoLogoGithub />
-            <Box w={1} />
+            <Box
+              _groupHover={{
+                color: 'white',
+              }}
+              pr={1}
+            >
+              <IoLogoGithub />
+            </Box>
             GitHub
           </Button>
         </a>
 
         <Button
+          role='group'
           onClick={toggleColorMode}
           w={10}
           h={10}
-          variant="outline"
-          rounded="none"
+          variant='outline'
+          rounded='none'
           _hover={{
             bg: hoverColor,
           }}
           _focus={{
-            boxShadow: "none",
+            boxShadow: 'none',
           }}
-          borderColor={colorMode === "light" ? "#222" : "#eee"}
-          bg={colorMode === "light" ? "#eee" : "#222"}
+          borderColor={colorMode === 'light' ? '#222' : '#eee'}
+          bg={colorMode === 'light' ? '#FFF' : '#222'}
         >
-          {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+          <Box
+            _groupHover={{
+              color: 'white',
+            }}
+          >
+            {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+          </Box>
         </Button>
 
         <Button
+          role='group'
           w={10}
           h={10}
-          variant="outline"
-          borderLeft="none"
-          rounded="none"
+          variant='outline'
+          borderLeft='none'
+          rounded='none'
           _hover={{
             bg: hoverColor,
           }}
           _focus={{
-            boxShadow: "none",
+            boxShadow: 'none',
           }}
-          borderColor={colorMode === "light" ? "#222" : "#eee"}
-          bg={colorMode === "light" ? "#eee" : "#222"}
+          borderColor={colorMode === 'light' ? '#222' : '#eee'}
+          bg={colorMode === 'light' ? '#FFF' : '#222'}
         >
-          <HamburgerIcon />
+          <Box
+            _groupHover={{
+              color: 'white',
+            }}
+          >
+            <HamburgerIcon />
+          </Box>
         </Button>
 
         {/* <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
