@@ -9,6 +9,11 @@ import {
   Heading,
   useColorModeValue,
   color,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
 } from '@chakra-ui/react';
 import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';
@@ -23,7 +28,13 @@ interface navLinkProps {
 
 const NavLink: React.FC<navLinkProps> = (props) => (
   <NextLink href={props.href} passHref scroll={false}>
-    <Link style={{ textDecoration: 'none' }} {...props}>
+    <Link
+      _focus={{
+        boxShadow: 'none',
+      }}
+      style={{ textDecoration: 'none' }}
+      {...props}
+    >
       {props.children}
     </Link>
   </NextLink>
@@ -31,7 +42,7 @@ const NavLink: React.FC<navLinkProps> = (props) => (
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const hoverColor = useColorModeValue('#000', '#333');
+  const hoverColor = useColorModeValue('#222', '#333');
 
   return (
     <>
@@ -41,10 +52,10 @@ const Navbar = () => {
         pt={8}
         px={8}
         mx={'auto'}
-        maxW={'6xl'}
-        w='100%'
+        // maxW={'6xl'}
+        // w='100%'
+        zIndex={2}
       >
-        {/* <Flex h={16} alignItems={"center"} justifyContent={"space-between"}> */}
         <NavLink href='/'>
           <Heading
             size={'md'}
@@ -58,10 +69,17 @@ const Navbar = () => {
             Marcus O&apos;Yang
           </Heading>
         </NavLink>
-        {/* </Flex> */}
       </Box>
 
-      <Flex pos={'fixed'} pt={8} px={8} justify={'right'} maxW={'6xl'} w='100%'>
+      <Flex
+        pos={'fixed'}
+        pt={8}
+        px={8}
+        justify={'right'}
+        maxW={'6xl'}
+        w='100%'
+        zIndex={1}
+      >
         <a
           target='_blank'
           href='https://github.com/marcusoyang'
@@ -124,52 +142,75 @@ const Navbar = () => {
           </Box>
         </Button>
 
-        <Button
-          role='group'
-          w={10}
-          h={10}
-          variant='outline'
-          borderLeft='none'
-          rounded='none'
-          _hover={{
-            bg: hoverColor,
-          }}
-          _focus={{
-            boxShadow: 'none',
-          }}
-          borderColor={colorMode === 'light' ? '#222' : '#eee'}
-          bg={colorMode === 'light' ? '#FFF' : '#222'}
-        >
-          <Box
-            _groupHover={{
-              color: 'white',
-            }}
-          >
-            <HamburgerIcon />
-          </Box>
-        </Button>
-
-        {/* <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
-            <Menu isLazy id="navbar-menu">
-            <MenuButton
+        <Menu isLazy id='navbar-menu'>
+          <MenuButton
             as={IconButton}
             icon={<HamburgerIcon />}
-            variant="outline"
-            aria-label="Open Menu"
-            />
-            <MenuList>
-            <NextLink href="/works" passHref>
-            <MenuItem as={Link}>Works</MenuItem>
+            role='group'
+            w={10}
+            h={10}
+            variant='outline'
+            borderLeft='none'
+            rounded='none'
+            _hover={{
+              bg: hoverColor,
+              color: 'white',
+            }}
+            _expanded={{
+              bg: hoverColor,
+              color: 'white',
+            }}
+            _focus={{
+              boxShadow: 'none',
+            }}
+            borderColor={colorMode === 'light' ? '#222' : '#eee'}
+            bg={colorMode === 'light' ? '#FFF' : '#222'}
+            aria-label='Open Menu'
+          />
+          <MenuList bg={colorMode === 'light' ? '#FFF' : '#222'}>
+            <NextLink href='/works' passHref>
+              <MenuItem
+                as={Link}
+                _focus={{
+                  boxShadow: 'none',
+                }}
+              >
+                Works
+              </MenuItem>
             </NextLink>
             <MenuItem
-            as={Link}
-            href="https://github.com/marcusoyang/nextjs-portfolio"
+              as={Link}
+              href='https://github.com/marcusoyang/nextjs-portfolio'
+              _focus={{
+                boxShadow: 'none',
+              }}
             >
-            Source Code
+              Source Code
             </MenuItem>
+          </MenuList>
+        </Menu>
+
+        {/* <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+          <Menu isLazy id='navbar-menu'>
+            <MenuButton
+              as={IconButton}
+              icon={<HamburgerIcon />}
+              variant='outline'
+              aria-label='Open Menu'
+            />
+            <MenuList>
+              <NextLink href='/works' passHref>
+                <MenuItem as={Link}>Works</MenuItem>
+              </NextLink>
+              <MenuItem
+                as={Link}
+                href='https://github.com/marcusoyang/nextjs-portfolio'
+              >
+                Source Code
+              </MenuItem>
             </MenuList>
-            </Menu>
-          </Box> */}
+          </Menu>
+        </Box> */}
       </Flex>
     </>
   );
