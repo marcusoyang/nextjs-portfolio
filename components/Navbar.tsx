@@ -50,25 +50,40 @@ const Navbar = () => {
       <Box
         pos={'fixed'}
         mixBlendMode={'difference'}
-        pt={8}
-        px={8}
+        pt={{ base: '16px', sm: '30px'}}
+        px={{ base: '16px', sm: '30px'}}
         mx={'auto'}
         // maxW={'6xl'}
         // w='100%'
         zIndex={2}
       >
         <NavLink href='/'>
-          <Heading
-            size={'md'}
-            letterSpacing={'tight'}
-            mt={1}
-            pb={1}
-            fontWeight={'normal'}
-            color={'white'}
-            fontSize={26}
-          >
-            Marcus O&apos;Yang
-          </Heading>
+          <Box>
+            <Heading
+              size={'md'}
+              letterSpacing={'tight'}
+              mt={1}
+              pb={1}
+              fontWeight={200}
+              color={'white'}
+              fontSize={{ base: 20, sm: 26}}
+              display={'inline-block'}
+            >
+              Marcus&nbsp;
+            </Heading>
+            <Heading
+              size={'md'}
+              letterSpacing={'tight'}
+              mt={1}
+              pb={1}
+              fontWeight={400}
+              color={'white'}
+              fontSize={{ base: 20, sm: 26}}
+              display={'inline-block'}
+            >
+              O&apos;Yang
+            </Heading>
+          </Box>
         </NavLink>
       </Box>
 
@@ -93,7 +108,7 @@ const Navbar = () => {
             mr={5}
             maxW={360}
             minW={140}
-            w={'12vw'}
+            w={'20vw'}
             h={10}
             fontSize={15}
             variant='outline'
@@ -214,7 +229,7 @@ const Navbar = () => {
               w={10}
               h={10}
               variant='outline'
-              borderLeft='none'
+              borderRight='none'
               rounded='none'
               _hover={{
                 bg: hoverColor,

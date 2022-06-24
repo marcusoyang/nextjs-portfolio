@@ -3,7 +3,7 @@ import { Box, Divider } from "@chakra-ui/react";
 const Home = () => {
   return (
     <>
-      <Box pt={95} h={3000} textAlign="center">
+      <Box pt={{ base: 62, sm: 90}} h={3000} textAlign="center">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin convallis
         sit amet justo quis cursus. Etiam a sagittis risus, non ullamcorper
         ante. In ullamcorper aliquet tellus, quis porta ante iaculis a. Fusce
