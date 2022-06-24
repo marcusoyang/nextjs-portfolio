@@ -1,9 +1,36 @@
-import { Box, Divider } from "@chakra-ui/react";
+import {
+  Flex,
+  Heading,
+  Box,
+  Divider,
+  HStack,
+  VStack,
+  Text,
+} from '@chakra-ui/react';
+import { Canvas } from '@react-three/fiber';
+import Floor from '../components/Floor';
+import OrbitControls from "../components/OrbitControls";
+import Sphere from "../components/Sphere";
+import LightBulb from "../components/Light";
 
 const Home = () => {
   return (
-    <>
-      <Box pt={{ base: 62, sm: 90}} h={3000} textAlign="center">
+    <Box pt={{ base: 62, sm: 95 }} px={16} w={'100%'}>
+      <Box w={'100%'} h={'200px'}>
+        <Canvas
+          shadows={true}
+          camera={{
+            position: [-6, 7, 7],
+          }}
+        >
+          <ambientLight color={"white"} intensity={0.2} />
+          <LightBulb position={[0, 3, 0]} />
+          <Sphere rotateX={3} rotateY={0.2} />
+          <OrbitControls />
+          <Floor position={[0, -1, 0]} />
+        </Canvas>
+      </Box>
+      {/* <Box pt={{ base: 62, sm: 90}} h={3000} textAlign="center">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin convallis
         sit amet justo quis cursus. Etiam a sagittis risus, non ullamcorper
         ante. In ullamcorper aliquet tellus, quis porta ante iaculis a. Fusce
@@ -64,8 +91,83 @@ const Home = () => {
         <Box h={100} bg={"black"}></Box>
         <Box h={100} bg={"white"}></Box>
         <Box h={100} bg={"black"}></Box>
-      </Box>
-    </>
+      </Box> */}
+      <VStack justify={'center'}>
+        <Box w={'100vw'} maxW={500}>
+          <Heading
+            size={'md'}
+            letterSpacing={'tight'}
+            mt={1}
+            pb={1}
+            fontWeight={200}
+            fontSize={{ base: 20, sm: 26 }}
+          >
+            Marcus O&apos;Yang
+          </Heading>
+          Student / Videographer / Developer
+        </Box>
+        <Box w={'100vw'} maxW={500}>
+          <Heading
+            size={'md'}
+            letterSpacing={'tight'}
+            mt={1}
+            pb={1}
+            fontWeight={200}
+            fontSize={{ base: 20, sm: 26 }}
+          >
+            Bio
+          </Heading>
+
+          {/* <HStack justify={'space-between'}>
+            <VStack justify={'start'} align={'flex-start'}>
+              <Text fontWeight={800}>2000</Text>
+              <Text fontWeight={800}>2018</Text>
+              <Text fontWeight={800}>2021</Text>
+              <Text fontWeight={800}>2023</Text>
+              <Text>t</Text>
+              <Text></Text>
+            </VStack>
+            <VStack align={'left'} w={300}>
+              <Text>Born in Sydney, Australia.</Text>
+              <Text>Graduated from St Ives High School.</Text>
+              <Text>Worked at Mastercard as a Software Intern.</Text>
+              <Text>
+                Expected completion of Bioinformatics Engineering (Honours) at
+                the University of New South Wales (UNSW).
+              </Text>
+            </VStack>
+          </HStack> */}
+
+          <HStack align={'flex-start'}>
+            <Text as='span' w={'52px'} fontWeight={800}>
+              2000
+            </Text>
+            <Text maxW={400}>Born in Sydney, Australia.</Text>
+          </HStack>
+          <HStack align={'flex-start'}>
+            <Text as='span' w={'52px'} fontWeight={800}>
+              2018
+            </Text>
+            <Text maxW={400}>Graduated from St Ives High School.</Text>
+          </HStack>
+          <HStack align={'flex-start'}>
+            <Text as='span' w={'52px'} fontWeight={800}>
+              2021
+            </Text>
+            <Text maxW={400}>Worked at Mastercard as a Software Intern.</Text>
+          </HStack>
+          <HStack align={'flex-start'}>
+            <Text as='span' w={'52px'} fontWeight={800}>
+              2023
+            </Text>
+            <Text maxW={400}>
+              Expected completion of Bioinformatics Engineering (Honours) at the
+              University of New South Wales (UNSW).
+            </Text>
+          </HStack>
+        </Box>
+      </VStack>
+    </Box>
   );
 };
 
