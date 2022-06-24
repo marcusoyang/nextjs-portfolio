@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
       <Fonts />
-      <Box mx={"auto"} maxW={"6xl"}>
+      <Box mx={"auto"} maxW={"6xl"} transitionDuration="500ms">
         <Navbar/>
         <Component {...pageProps} />
       </Box>
