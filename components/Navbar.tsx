@@ -18,6 +18,7 @@ import {
 import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';
 import { IoLogoGithub } from 'react-icons/io5';
+import { NodeNextRequest } from 'next/dist/server/base-http/node';
 interface navLinkProps {
   href: string;
   children: ReactNode;
@@ -71,14 +72,16 @@ const Navbar = () => {
         </NavLink>
       </Box>
 
+      {/* top navbar */}
       <Flex
         pos={'fixed'}
         pt={8}
         px={8}
         justify={'right'}
-        maxW={'6xl'}
+        maxW='6xl'
         w='100%'
         zIndex={1}
+        display={{ base: 'none', sm: 'flex' }}
       >
         <a
           target='_blank'
@@ -88,9 +91,9 @@ const Navbar = () => {
           <Button
             role='group'
             mr={5}
-            maxW={300}
-            minW={120}
-            w={'10vw'}
+            maxW={360}
+            minW={140}
+            w={'12vw'}
             h={10}
             fontSize={15}
             variant='outline'
@@ -189,19 +192,144 @@ const Navbar = () => {
             </MenuItem>
           </MenuList>
         </Menu>
+      </Flex>
 
-        {/* <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+      {/* bottom navbar */}
+
+      <Flex
+        pos={'fixed'}
+        bottom={6}
+        maxW='6xl'
+        w='100%'
+        justify={'space-between'}
+        zIndex={1}
+        display={{ base: 'flex', sm: 'none' }}
+      >
+        <Box ml={4}>
           <Menu isLazy id='navbar-menu'>
             <MenuButton
               as={IconButton}
               icon={<HamburgerIcon />}
+              role='group'
+              w={10}
+              h={10}
               variant='outline'
+              borderLeft='none'
+              rounded='none'
+              _hover={{
+                bg: hoverColor,
+                color: 'white',
+              }}
+              _expanded={{
+                bg: hoverColor,
+                color: 'white',
+              }}
+              _focus={{
+                boxShadow: 'none',
+              }}
+              borderColor={colorMode === 'light' ? '#222' : '#eee'}
+              bg={colorMode === 'light' ? '#FFF' : '#222'}
               aria-label='Open Menu'
             />
-            <MenuList>
+            <MenuList bg={colorMode === 'light' ? '#FFF' : '#222'}>
               <NextLink href='/works' passHref>
-                <MenuItem as={Link}>Works</MenuItem>
+                <MenuItem
+                  as={Link}
+                  _focus={{
+                    boxShadow: 'none',
+                  }}
+                >
+                  Works
+                </MenuItem>
               </NextLink>
+              <MenuItem
+                as={Link}
+                href='https://github.com/marcusoyang/nextjs-portfolio'
+                _focus={{
+                  boxShadow: 'none',
+                }}
+              >
+                Source Code
+              </MenuItem>
+            </MenuList>
+          </Menu>
+
+          <Button
+            role='group'
+            onClick={toggleColorMode}
+            w={10}
+            h={10}
+            variant='outline'
+            rounded='none'
+            _hover={{
+              bg: hoverColor,
+            }}
+            _focus={{
+              boxShadow: 'none',
+            }}
+            borderColor={colorMode === 'light' ? '#222' : '#eee'}
+            bg={colorMode === 'light' ? '#FFF' : '#222'}
+          >
+            <Box
+              _groupHover={{
+                color: 'white',
+              }}
+            >
+              {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+            </Box>
+          </Button>
+        </Box>
+
+        <Box mr={4}>
+          <a
+            target='_blank'
+            href='https://github.com/marcusoyang'
+            rel='noopener noreferrer'
+          >
+            <Button
+              role='group'
+              maxW={360}
+              minW={140}
+              w={100}
+              h={10}
+              fontSize={15}
+              variant='outline'
+              rounded='none'
+              _hover={{
+                bg: hoverColor,
+                color: '#FFF',
+              }}
+              _focus={{
+                boxShadow: 'none',
+              }}
+              borderColor={colorMode === 'light' ? '#222' : '#eee'}
+              bg={colorMode === 'light' ? '#FFF' : '#222'}
+            >
+              <Box
+                _groupHover={{
+                  color: 'white',
+                }}
+                pr={1}
+              >
+                <IoLogoGithub />
+              </Box>
+              GitHub
+            </Button>
+          </a>
+        </Box>
+
+        {/* <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+          <Menu isLazy id='navbar-menu'>
+          <MenuButton
+          as={IconButton}
+          icon={<HamburgerIcon />}
+          variant='outline'
+          aria-label='Open Menu'
+          />
+          <MenuList>
+          <NextLink href='/works' passHref>
+          <MenuItem as={Link}>Works</MenuItem>
+          </NextLink>
               <MenuItem
                 as={Link}
                 href='https://github.com/marcusoyang/nextjs-portfolio'

@@ -21,6 +21,14 @@ const config: ThemeConfig = {
   useSystemColorMode: false,
 }
 
-const theme = extendTheme({config, fonts, styles})
+const breakpoints = {
+  sm: '32em',
+  md: '48em',
+  lg: '62em',
+  xl: '80em',
+  '2xl': '96em',
+}
+
+const theme = extendTheme({config, fonts, styles, breakpoints})
 
 export default theme;
