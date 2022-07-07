@@ -89,8 +89,7 @@ const Home = () => {
             <Heading
               size={'md'}
               letterSpacing={'tight'}
-              mt={1}
-              pb={1}
+              my={'4px'}
               fontWeight={200}
               fontSize={{ base: 20, sm: 26 }}
             >
