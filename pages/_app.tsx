@@ -6,7 +6,12 @@ import '@fontsource/raleway/400.css'
 import '@fontsource/open-sans/700.css'
 import '../styles/global.css'
 
-function MyApp({ Component, pageProps }) {
+interface MyAppProps {
+  Component: React.ComponentType<any>
+  pageProps: any
+}
+
+const MyApp = ({ Component, pageProps }:MyAppProps) => {
   return (
     <ChakraProvider theme={theme}>
       <Fonts />

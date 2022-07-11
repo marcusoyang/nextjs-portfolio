@@ -10,12 +10,17 @@ import {
   Container,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-import { Canvas } from '@react-three/fiber';
-import Floor from '../components/Floor';
-import OrbitControls from '../components/OrbitControls';
-import Sphere from '../components/Sphere';
-import LightBulb from '../components/Light';
 import { BioText, BioYear } from '../components/Bio';
+
+import { Canvas } from '@react-three/fiber';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import Floor from '../components/Floor';
+import Sphere from '../components/Sphere';
+import Lights from '../components/Lights';
+import Model from '../components/Model';
+
+import { Suspense } from 'react';
+import { Environment, OrbitControls } from '@react-three/drei';
 
 // Allow custom props to be forwarded to nextjs image component
 const ProfileImage = chakra(Image, {
@@ -25,23 +30,27 @@ const ProfileImage = chakra(Image, {
 const Home = () => {
   return (
     <Container>
-      <VStack
-        pt={{ base: 62, sm: 95 }}
-        maxW={'100%'}
-        h={2000}
-      >
+      <VStack pt={{ base: 62, sm: 95 }} maxW={'100%'} h={2000}>
         <Box w={'100%'} h={'400px'}>
-          <Canvas
+          {/* <Canvas
             shadows={true}
             camera={{
               position: [-6, 7, 7],
             }}
           >
             <ambientLight color={'white'} intensity={0.2} />
-            <LightBulb position={[0, 3, 0]} />
+            <Lights position={[0, 3, 0]} />
             <Sphere rotateX={3} rotateY={0.2} />
             <OrbitControls />
             <Floor position={[0, -1, 0]} />
+          </Canvas> */}
+          <Canvas>
+            <Suspense fallback={null}>
+              <Lights />
+              <Model />
+              <OrbitControls/>
+              {/* <Environment preset="sunset" background /> */}
+            </Suspense>
           </Canvas>
         </Box>
         <VStack justify={'center'} maxW={'480px'}>
@@ -76,7 +85,7 @@ const Home = () => {
                 mt={1}
               >
                 <ProfileImage
-                  src='/../public/marcus.jpg'
+                  src='/marcus.jpg'
                   alt='Profile image'
                   borderRadius='full'
                   width={'100%'}
