@@ -18,7 +18,12 @@ import {
 } from '@chakra-ui/react';
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';
-import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5';
+import {
+  IoLogoGithub,
+  IoLogoLinkedin,
+  IoLogoBehance,
+  IoLogoYoutube,
+} from 'react-icons/io5';
 import { NodeNextRequest } from 'next/dist/server/base-http/node';
 interface navLinkProps {
   href: string;
@@ -139,6 +144,70 @@ const Navbar = () => {
           </Button>
         </a>
 
+        {/* <a
+          target='_blank'
+          href='https://www.behance.net/marcusoyang'
+          rel='noopener noreferrer'
+        >
+          <Button
+            role='group'
+            w={10}
+            h={10}
+            variant='outline'
+            rounded='none'
+            transition='background 0.5s ease'
+            _hover={{
+              bg: hoverColor,
+            }}
+            _focus={{
+              boxShadow: 'none',
+            }}
+            borderColor={colorMode === 'light' ? '#222' : '#eee'}
+            bg={colorMode === 'light' ? '#FFF' : '#222'}
+            borderRight={'none'}
+          >
+            <Box
+              _groupHover={{
+                color: 'white',
+              }}
+            >
+              Bē
+            </Box>
+          </Button>
+        </a>
+
+        <a
+          target='_blank'
+          href='https://www.linkedin.com/in/marcusoyang/'
+          rel='noopener noreferrer'
+        >
+          <Button
+            role='group'
+            w={10}
+            h={10}
+            variant='outline'
+            rounded='none'
+            transition='background 0.5s ease'
+            _hover={{
+              bg: hoverColor,
+            }}
+            _focus={{
+              boxShadow: 'none',
+            }}
+            borderColor={colorMode === 'light' ? '#222' : '#eee'}
+            bg={colorMode === 'light' ? '#FFF' : '#222'}
+            borderRight={'none'}
+          >
+            <Box
+              _groupHover={{
+                color: 'white',
+              }}
+            >
+              Li
+            </Box>
+          </Button>
+        </a> */}
+
         <Button
           role='group'
           onClick={toggleColorMode}
@@ -197,15 +266,44 @@ const Navbar = () => {
               <MenuList bg={colorMode === 'light' ? '#FFF' : '#222'}>
                 <MenuItem
                   as={Link}
-                  href='https://www.linkedin.com/in/marcus-oyang/'
+                  target='_blank'
+                  href='https://www.linkedin.com/in/marcusoyang/'
                   _focus={{
                     boxShadow: 'none',
                   }}
                 >
-                  <IoLogoLinkedin />
-                  &nbsp;LinkedIn
+                  <Box mr={1} mb={'2px'}>
+                    <IoLogoLinkedin />
+                  </Box>
+                  LinkedIn
                 </MenuItem>
-                <NextLink href='/works' passHref>
+                <MenuItem
+                  as={Link}
+                  target='_blank'
+                  href='https://www.youtube.com/c/HORIZONdance'
+                  _focus={{
+                    boxShadow: 'none',
+                  }}
+                >
+                  <Box mr={1} mb={'2px'}>
+                    <IoLogoYoutube />
+                  </Box>
+                  YouTube
+                </MenuItem>
+                <MenuItem
+                  as={Link}
+                  target='_blank'
+                  href='https://www.behance.net/marcusoyang'
+                  _focus={{
+                    boxShadow: 'none',
+                  }}
+                >
+                  <Box mr={1} mb={'2px'}>
+                    <IoLogoBehance />
+                  </Box>
+                  Bēhance
+                </MenuItem>
+                {/* <NextLink href='/works' passHref>
                   <MenuItem
                     as={Link}
                     _focus={{
@@ -214,7 +312,7 @@ const Navbar = () => {
                   >
                     Works
                   </MenuItem>
-                </NextLink>
+                </NextLink> */}
                 <MenuItem
                   as={Link}
                   href='https://github.com/marcusoyang/nextjs-portfolio'
@@ -274,36 +372,65 @@ const Navbar = () => {
                   aria-label='Open Menu'
                 />
                 <MenuList bg={colorMode === 'light' ? '#FFF' : '#222'}>
-                  <MenuItem
-                    as={Link}
-                    href='https://www.linkedin.com/in/marcus-oyang/'
-                    _focus={{
-                      boxShadow: 'none',
-                    }}
-                  >
+                <MenuItem
+                  as={Link}
+                  target='_blank'
+                  href='https://www.linkedin.com/in/marcusoyang/'
+                  _focus={{
+                    boxShadow: 'none',
+                  }}
+                >
+                  <Box mr={1} mb={'2px'}>
                     <IoLogoLinkedin />
-                    &nbsp;LinkedIn
-                  </MenuItem>
-                  <NextLink href='/works' passHref>
-                    <MenuItem
-                      as={Link}
-                      _focus={{
-                        boxShadow: 'none',
-                      }}
-                    >
-                      Works
-                    </MenuItem>
-                  </NextLink>
+                  </Box>
+                  LinkedIn
+                </MenuItem>
+                <MenuItem
+                  as={Link}
+                  target='_blank'
+                  href='https://www.youtube.com/c/HORIZONdance'
+                  _focus={{
+                    boxShadow: 'none',
+                  }}
+                >
+                  <Box mr={1} mb={'2px'}>
+                    <IoLogoYoutube />
+                  </Box>
+                  YouTube
+                </MenuItem>
+                <MenuItem
+                  as={Link}
+                  target='_blank'
+                  href='https://www.behance.net/marcusoyang'
+                  _focus={{
+                    boxShadow: 'none',
+                  }}
+                >
+                  <Box mr={1} mb={'2px'}>
+                    <IoLogoBehance />
+                  </Box>
+                  Bēhance
+                </MenuItem>
+                {/* <NextLink href='/works' passHref>
                   <MenuItem
                     as={Link}
-                    href='https://github.com/marcusoyang/nextjs-portfolio'
                     _focus={{
                       boxShadow: 'none',
                     }}
                   >
-                    Source Code
+                    Works
                   </MenuItem>
-                </MenuList>
+                </NextLink> */}
+                <MenuItem
+                  as={Link}
+                  href='https://github.com/marcusoyang/nextjs-portfolio'
+                  _focus={{
+                    boxShadow: 'none',
+                  }}
+                >
+                  Source Code
+                </MenuItem>
+              </MenuList>
               </>
             )}
           </Menu>
