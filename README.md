@@ -12,7 +12,7 @@ To learn more about Next.js, take a look at the following resources:
 
 ## Deployed on Vercel
 
-Official link can be found [here](https://marcusoyang.vercel.app/).
+Official link can be found [here](https://www.marcuso.dev/).
 ## Credits
 "Low Poly Flying Island" (https://skfb.ly/opsGN) by Mohamed Fsili is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
