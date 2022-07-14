@@ -14,10 +14,9 @@ import { BioText, BioYear } from '../components/Bio';
 
 import { Canvas } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import Floor from '../components/Floor';
-import Sphere from '../components/Sphere';
-import Lights from '../components/Lights';
-import Model from '../components/Model';
+import Lights from '../components/model/Lights';
+import Model from '../components/model/Model';
+import Loader from '../components/model/Loader';
 
 import { Suspense } from 'react';
 import { Environment, OrbitControls } from '@react-three/drei';
@@ -35,7 +34,7 @@ const Home = () => {
           {/* <Canvas
             shadows={true}
             camera={{
-              position: [-6, 7, 7],
+              near: 0.1, far: 1000, position: [0, 0, 0],
             }}
           >
             <ambientLight color={'white'} intensity={0.2} />
@@ -44,12 +43,15 @@ const Home = () => {
             <OrbitControls />
             <Floor position={[0, -1, 0]} />
           </Canvas> */}
-          <Canvas>
-            <Suspense fallback={null}>
+          <Canvas
+            camera={{
+              position: [2, 2, 4],
+            }}
+          >
+            <Suspense fallback={<Loader />}>
               <Lights />
               <Model />
-              <OrbitControls/>
-              {/* <Environment preset="sunset" background /> */}
+              <OrbitControls />
             </Suspense>
           </Canvas>
         </Box>
@@ -67,11 +69,7 @@ const Home = () => {
               </Heading>
               <span>Student / Videographer / Developer</span>
             </Box>
-            <Box
-              flexShrink={0}
-              ml={'6px'}
-              textAlign='center'
-            >
+            <Box flexShrink={0} ml={'6px'} textAlign='center'>
               <Box
                 borderColor='whiteAlpha.800'
                 borderWidth={3}
