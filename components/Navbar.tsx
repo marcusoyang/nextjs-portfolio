@@ -315,6 +315,7 @@ const Navbar = () => {
                 </NextLink> */}
                 <MenuItem
                   as={Link}
+                  target='_blank'
                   href='https://github.com/marcusoyang/nextjs-portfolio'
                   _focus={{
                     boxShadow: 'none',
@@ -423,6 +424,7 @@ const Navbar = () => {
                 </NextLink> */}
                 <MenuItem
                   as={Link}
+                  target='_blank'
                   href='https://github.com/marcusoyang/nextjs-portfolio'
                   _focus={{
                     boxShadow: 'none',

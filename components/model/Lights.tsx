@@ -7,7 +7,7 @@ const Lights = (props: any) => {
       <sphereBufferGeometry args={[0.2, 30, 10]} />
       <meshPhongMaterial emissive={'yellow'} /> */}
       <ambientLight intensity={0.1} />
-      <directionalLight position={[40, 10, 5]} intensity={0.2} />
+      {/* <directionalLight position={[40, 10, 5]} intensity={0.2} /> */}
       <directionalLight
         castShadow
         position={[10, 420, 100]}
@@ -20,7 +20,8 @@ const Lights = (props: any) => {
         shadow-camera-top={40}
         shadow-camera-bottom={-10}
       />
-      <spotLight intensity={0.5} position={[90, 100, 50]} castShadow />
+      <spotLight intensity={0.3} position={[90, 100, 50]} castShadow />
+      <spotLight intensity={0.1} position={[90, 0, 50]} castShadow />
     </mesh>
   );
 };
