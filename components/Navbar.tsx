@@ -263,7 +263,6 @@ const Navbar = () => {
                 }}
                 borderColor={colorMode === 'light' ? '#222' : '#eee'}
                 bg={colorMode === 'light' ? '#FFF' : '#222'}
-                aria-label='Open Menu'
               />
               <MenuList bg={colorMode === 'light' ? '#FFF' : '#222'}>
                 <MenuItem
@@ -374,7 +373,6 @@ const Navbar = () => {
                   }}
                   borderColor={colorMode === 'light' ? '#222' : '#eee'}
                   bg={colorMode === 'light' ? '#FFF' : '#222'}
-                  aria-label='Open Menu'
                 />
                 <MenuList bg={colorMode === 'light' ? '#FFF' : '#222'}>
                   <MenuItem
