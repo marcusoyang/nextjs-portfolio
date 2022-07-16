@@ -234,11 +234,13 @@ const Navbar = () => {
           </Box>
         </Button>
 
-        <Menu isLazy id='navbar-menu'>
+        <Menu isLazy id='navbar-menu-top'>
           {({ isOpen }) => (
             <>
               <MenuButton
                 as={IconButton}
+                aria-label='Menu'
+                id='navbar-menu-button-top'
                 isActive={isOpen}
                 icon={isOpen ? <CloseIcon maxW={3} /> : <HamburgerIcon />}
                 role='group'
@@ -343,11 +345,13 @@ const Navbar = () => {
         display={{ base: 'flex', sm: 'none' }}
       >
         <Box ml={4}>
-          <Menu isLazy id='navbar-menu'>
+          <Menu isLazy id='navbar-menu-bottom'>
             {({ isOpen }) => (
               <>
                 <MenuButton
                   as={IconButton}
+                  aria-label='Menu'
+                  id='navbar-menu-button-bottom'
                   isActive={isOpen}
                   icon={isOpen ? <CloseIcon maxW={3} /> : <HamburgerIcon />}
                   role='group'
@@ -373,46 +377,46 @@ const Navbar = () => {
                   aria-label='Open Menu'
                 />
                 <MenuList bg={colorMode === 'light' ? '#FFF' : '#222'}>
-                <MenuItem
-                  as={Link}
-                  target='_blank'
-                  href='https://www.linkedin.com/in/marcusoyang/'
-                  _focus={{
-                    boxShadow: 'none',
-                  }}
-                >
-                  <Box mr={1} mb={'2px'}>
-                    <IoLogoLinkedin />
-                  </Box>
-                  LinkedIn
-                </MenuItem>
-                <MenuItem
-                  as={Link}
-                  target='_blank'
-                  href='https://www.youtube.com/c/HORIZONdance'
-                  _focus={{
-                    boxShadow: 'none',
-                  }}
-                >
-                  <Box mr={1} mb={'2px'}>
-                    <IoLogoYoutube />
-                  </Box>
-                  YouTube
-                </MenuItem>
-                <MenuItem
-                  as={Link}
-                  target='_blank'
-                  href='https://www.behance.net/marcusoyang'
-                  _focus={{
-                    boxShadow: 'none',
-                  }}
-                >
-                  <Box mr={1} mb={'2px'}>
-                    <IoLogoBehance />
-                  </Box>
-                  Bēhance
-                </MenuItem>
-                {/* <NextLink href='/works' passHref>
+                  <MenuItem
+                    as={Link}
+                    target='_blank'
+                    href='https://www.linkedin.com/in/marcusoyang/'
+                    _focus={{
+                      boxShadow: 'none',
+                    }}
+                  >
+                    <Box mr={1} mb={'2px'}>
+                      <IoLogoLinkedin />
+                    </Box>
+                    LinkedIn
+                  </MenuItem>
+                  <MenuItem
+                    as={Link}
+                    target='_blank'
+                    href='https://www.youtube.com/c/HORIZONdance'
+                    _focus={{
+                      boxShadow: 'none',
+                    }}
+                  >
+                    <Box mr={1} mb={'2px'}>
+                      <IoLogoYoutube />
+                    </Box>
+                    YouTube
+                  </MenuItem>
+                  <MenuItem
+                    as={Link}
+                    target='_blank'
+                    href='https://www.behance.net/marcusoyang'
+                    _focus={{
+                      boxShadow: 'none',
+                    }}
+                  >
+                    <Box mr={1} mb={'2px'}>
+                      <IoLogoBehance />
+                    </Box>
+                    Bēhance
+                  </MenuItem>
+                  {/* <NextLink href='/works' passHref>
                   <MenuItem
                     as={Link}
                     _focus={{
@@ -422,22 +426,23 @@ const Navbar = () => {
                     Works
                   </MenuItem>
                 </NextLink> */}
-                <MenuItem
-                  as={Link}
-                  target='_blank'
-                  href='https://github.com/marcusoyang/nextjs-portfolio'
-                  _focus={{
-                    boxShadow: 'none',
-                  }}
-                >
-                  Source Code
-                </MenuItem>
-              </MenuList>
+                  <MenuItem
+                    as={Link}
+                    target='_blank'
+                    href='https://github.com/marcusoyang/nextjs-portfolio'
+                    _focus={{
+                      boxShadow: 'none',
+                    }}
+                  >
+                    Source Code
+                  </MenuItem>
+                </MenuList>
               </>
             )}
           </Menu>
 
           <Button
+            aria-label='Change color mode'
             role='group'
             onClick={toggleColorMode}
             w={10}
@@ -472,6 +477,7 @@ const Navbar = () => {
           >
             <Button
               role='group'
+              aria-label='Github'
               maxW={360}
               minW={140}
               w={100}
