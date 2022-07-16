@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-}
+  compress: true,
+};
 
 // const withTM = require("next-transpile-modules")([
 //   "three",
@@ -9,4 +10,4 @@ const nextConfig = {
 //   "drei",
 // ]);
 
-module.exports = nextConfig
+module.exports = nextConfig;

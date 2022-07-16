@@ -10,25 +10,30 @@ import {
   Container,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-import { BioText, BioYear } from '../components/Bio';
-
+import Head from 'next/head';
+import { Suspense } from 'react';
+import { Environment, OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+
 import Lights from '../components/model/Lights';
 import Model from '../components/model/Model';
 import Loader from '../components/model/Loader';
+import { BioText, BioYear } from '../components/Bio';
 
-import { Suspense } from 'react';
-import { Environment, OrbitControls } from '@react-three/drei';
 
 // Allow custom props to be forwarded to nextjs image component
-const ProfileImage = chakra(Image, {
-  shouldForwardProp: (prop) => ['width', 'height', 'src', 'alt'].includes(prop),
-});
+// const ProfileImage = chakra(Image, {
+//   shouldForwardProp: (prop) => ['width', 'height', 'src', 'alt'].includes(prop),
+// });
 
 const Home = () => {
   return (
     <Container>
+      <Head>
+        <title>Marcus O&apos;Yang - Home</title>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      </Head>
       <VStack pt={{ base: 62, sm: 95 }} maxW={'100%'} h={2000}>
         <Box w={'100%'} h={'400px'}>
           {/* <Canvas
@@ -81,12 +86,19 @@ const Home = () => {
                 overflow='hidden'
                 mt={2}
               >
-                <ProfileImage
+                {/* <ProfileImage
                   src='/marcus.jpg'
                   alt='Profile image'
                   borderRadius='full'
                   width='120px'
                   height='120px'
+                /> */}
+                <Image
+                  src={'/marcus.jpg'}
+                  alt='Profile image'
+                  width='120px'
+                  height='120px'
+                  quality={'100'}
                 />
               </Box>
             </Box>
