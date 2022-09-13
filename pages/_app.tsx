@@ -8,14 +8,14 @@ import '@fontsource/montserrat/500.css';
 import { AppProps } from 'next/app';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  return (
-    <ChakraProvider theme={theme}>
-      <Box mx={'auto'} maxW={'6xl'} transitionDuration='500ms'>
-        <Navbar />
-        <Component {...pageProps} />
-      </Box>
-    </ChakraProvider>
-  );
+    return (
+        <ChakraProvider theme={theme}>
+            <Box mx={'auto'} maxW={'6xl'} transitionDuration='500ms'>
+                <Navbar />
+                <Component {...pageProps} />
+            </Box>
+        </ChakraProvider>
+    );
 };
 
 export default MyApp;
