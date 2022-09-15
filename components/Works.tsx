@@ -43,7 +43,7 @@ const Works = () => {
             <Grid w={'100%'} h={600} templateColumns='repeat(2, 1fr)' gap={6}>
                 <GridItem>
                     <WorkCard
-                        thumbnail={'/works/iprm.png'}
+                        thumbnail={'/works/iprm.PNG'}
                         subtitle={'Blockchain Smart Contract & Web App'}
                         title={'IP Rights Management'}
                         desc={
@@ -53,7 +53,7 @@ const Works = () => {
                 </GridItem>
                 <GridItem>
                     <WorkCard
-                        thumbnail={'/works/sigmund.png'}
+                        thumbnail={'/works/sigmund.PNG'}
                         subtitle={'Pytorch ML trained chess engine'}
                         title={'Sigmund'}
                         desc={
@@ -63,7 +63,7 @@ const Works = () => {
                 </GridItem>
                 <GridItem>
                     <WorkCard
-                        thumbnail={'/works/gloria_romanus.png'}
+                        thumbnail={'/works/gloria_romanus.PNG'}
                         subtitle={'Java Strategy Game'}
                         title={'Gloria Romanus'}
                         desc={
@@ -73,7 +73,7 @@ const Works = () => {
                 </GridItem>
                 <GridItem>
                     <WorkCard
-                        thumbnail={'/works/maptime.png'}
+                        thumbnail={'/works/maptime.PNG'}
                         subtitle={'Python Flask Web App'}
                         title={'MapTime'}
                         desc={
@@ -84,7 +84,7 @@ const Works = () => {
 
                 <GridItem>
                     <WorkCard
-                        thumbnail={'/works/sigmund.png'}
+                        thumbnail={'/works/sigmund.PNG'}
                         subtitle={'Online Multiplayer Chess'}
                         title={'Sigmund PvP'}
                         desc={

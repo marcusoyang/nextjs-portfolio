@@ -5,13 +5,13 @@ import {
     Heading,
     Avatar,
     Box,
-    Image,
     Text,
 } from '@chakra-ui/react';
 import React from 'react';
+import Image from 'next/image';
 
 interface WorkCardProps {
-    thumbnail?: string;
+    thumbnail: string;
     subtitle: string;
     title: string;
     desc: string;
