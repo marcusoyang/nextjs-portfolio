@@ -4,6 +4,7 @@ import theme from '../lib/theme';
 import '@fontsource/raleway/400.css';
 import '@fontsource/montserrat/200.css';
 import '@fontsource/montserrat/500.css';
+import '../styles.scss';
 
 import { AppProps } from 'next/app';
 

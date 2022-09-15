@@ -1,5 +1,5 @@
 import { Box, chakra, Heading } from '@chakra-ui/react';
-import AnimatedText from './AnimatedText';
+import TypeWriter from './TypeWriter';
 
 export const BioText = chakra(Box, {
     baseStyle: {
@@ -26,9 +26,9 @@ const Bio = () => {
                     letterSpacing={'tight'}
                     my={'4px'}
                     fontWeight={200}
-                    fontSize={{ base: 20, sm: 26 }}
+                    fontSize={{ base: 20, sm: 28 }}
                 >
-                    <AnimatedText text={'Bio'} />
+                    <TypeWriter>Bio</TypeWriter>
                 </Heading>
             </Box>
             <BioText>

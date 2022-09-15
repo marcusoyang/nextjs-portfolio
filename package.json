@@ -26,7 +26,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.3.1",
     "sass": "^1.54.9",
-    "three": "^0.141.0"
+    "three": "^0.141.0",
+    "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",

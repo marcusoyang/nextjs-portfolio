@@ -19,7 +19,9 @@ import Model from '../components/model/Model';
 import Loader from '../components/model/Loader';
 import Bio from '../components/Bio';
 import Works from '../components/Works';
-import AnimatedText from '../components/AnimatedText';
+import TypeWriter from '../components/TypeWriter';
+import Line from '../components/Line';
+import TestComponent from '../components/TestComponent';
 
 // Allow custom props to be forwarded to nextjs image component
 // const ProfileImage = chakra(Image, {
@@ -67,36 +69,36 @@ const Home = () => {
                         </Suspense>
                     </Canvas>
                 </Box>
-                <VStack justify={'center'} maxW={'480px'}>
-                    <HStack justify={'center'} w={'100%'}>
-                        <Box mr={2} flexGrow={1}>
+                <VStack justify={'center'} maxW={'520px'}>
+                    <HStack justify={'center'} w={'100%'} mb={2}>
+                        <Box flexGrow={1}>
                             <Heading
                                 size={'md'}
                                 letterSpacing={'tight'}
                                 mb={1}
                                 fontWeight={200}
-                                fontSize={{ base: 20, sm: 26 }}
+                                fontSize={{ base: 24, sm: 32 }}
                             >
-                                {/* Marcus O&apos;Yang */}
-                                <AnimatedText text={"Marcus O'Yang"} />
+                                <TypeWriter>Marcus O&apos;Yang</TypeWriter>
                             </Heading>
-                            <AnimatedText
-                                text={'Student / Videographer / Developer'}
-                            />
                             {/* <span>Student / Videographer / Developer</span> */}
+                            <TypeWriter>
+                                Student / Videographer / Developer
+                            </TypeWriter>
+                            {/* <Line></Line> */}
                         </Box>
                         <Flex
                             display={{ base: 'none', sm: 'flex' }}
                             flexShrink={0}
-                            ml={'6px'}
                             textAlign='center'
+                            pr={6}
                         >
                             <Box
                                 borderColor='whiteAlpha.800'
                                 borderWidth={3}
                                 borderStyle='solid'
-                                w='120px'
-                                h='120px'
+                                w='125px'
+                                h='125px'
                                 display='inline-block'
                                 borderRadius='full'
                                 overflow='hidden'
@@ -105,8 +107,8 @@ const Home = () => {
                                 <Image
                                     src={'/marcus.jpg'}
                                     alt='Profile image'
-                                    width='120px'
-                                    height='120px'
+                                    width='125px'
+                                    height='125px'
                                     quality={'100'}
                                 />
                             </Box>
