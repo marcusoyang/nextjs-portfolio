@@ -7,5 +7,6 @@
         "Phong",
         "recieve",
         "uncache"
-    ]
+    ],
+    "editor.formatOnSave": true
 }
