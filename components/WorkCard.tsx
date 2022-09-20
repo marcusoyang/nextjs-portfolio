@@ -22,7 +22,7 @@ const WorkCard = (props: WorkCardProps) => {
         <>
             <Center py={6}>
                 <Box
-                    w={'full'}
+                    w={'100%'}
                     // bg={useColorModeValue('white', '#222')}
                     boxShadow={'2xl'}
                     rounded={'sm'}
@@ -30,14 +30,18 @@ const WorkCard = (props: WorkCardProps) => {
                     p={6}
                 >
                     <Box
-                        h={'125px'}
+                        h={{ base: '200px', sm: '125px' }}
                         // bg={'gray.100'}
                         mt={-6}
                         mx={-6}
                         mb={6}
                         pos={'relative'}
                     >
-                        <Image src={props.thumbnail} alt={'Maptime'} />
+                        <Image
+                            layout='fill'
+                            src={props.thumbnail}
+                            alt={'Maptime'}
+                        />
                     </Box>
                     <Stack>
                         <Text

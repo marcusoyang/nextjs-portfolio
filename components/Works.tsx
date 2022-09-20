@@ -40,7 +40,15 @@ const Works = () => {
                     <TypeWriter>(work in progress)</TypeWriter>
                 </span>
             </Box>
-            <Grid w={'100%'} h={600} templateColumns='repeat(2, 1fr)' gap={6}>
+            <Grid
+                w={'100%'}
+                h={600}
+                templateColumns={{
+                    base: 'repeat(1, 1fr)',
+                    sm: 'repeat(2, 1fr)',
+                }}
+                gap={6}
+            >
                 <GridItem>
                     <WorkCard
                         thumbnail={'/works/iprm.PNG'}
@@ -81,7 +89,6 @@ const Works = () => {
                         }
                     />
                 </GridItem>
-
                 <GridItem>
                     <WorkCard
                         thumbnail={'/works/sigmund.PNG'}
