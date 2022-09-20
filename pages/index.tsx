@@ -38,8 +38,8 @@ const Home = () => {
                     content='initial-scale=1.0, width=device-width'
                 />
             </Head>
-            <VStack pt={32} maxW={'100%'} h={2000}>
-                <Box w={'100%'} h={'400px'}>
+            <VStack pt={{ base: 8, sm: 12 }} maxW={'100%'} h={2000}>
+                <Box w={'100%'} h={{ base: '300px', sm: '350px' }}>
                     {/* <Canvas
                         shadows={true}
                         camera={{
