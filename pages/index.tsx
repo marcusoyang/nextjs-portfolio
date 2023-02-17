@@ -69,6 +69,7 @@ const Home = () => {
                         </Suspense>
                     </Canvas>
                 </Box>
+                {/* <Box display={{ base: 'flex', xl: 'none' }}>TRUE</Box> */}
                 <VStack justify={'center'} maxW={'520px'}>
                     <HStack justify={'center'} w={'100%'} mb={2}>
                         <Box flexGrow={1}>

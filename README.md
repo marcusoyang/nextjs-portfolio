@@ -2,7 +2,7 @@
 
 My personal portfolio website bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). Performance analytics will be added soon! 
 
-## Libraries
+## Tech Stack
 - React
 - NextJS
 - Typescript
