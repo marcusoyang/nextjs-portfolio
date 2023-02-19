@@ -29,36 +29,42 @@ const work_information = [
         subtitle: 'Full Stack Splunk App',
         title: 'Splunk Add-on',
         desc: 'Modular Input, Custom SPL command and Visualization for Splunk using Coingecko API to track cryptocurrency data.',
-    },
-    {
-        thumbnail: '/works/iprm.PNG',
-        subtitle: 'Blockchain Smart Contract & Web App',
-        title: 'IP Rights Management',
-        desc: 'An blockchain-based intellectual property rights management system using Solidity smart contracts, IPFS and a React frontend.',
-    },
-    {
-        thumbnail: '/works/sigmund.PNG',
-        subtitle: 'Pytorch ML trained chess engine',
-        title: 'Sigmund',
-        desc: 'A neural network model trained using public Lichess evaluations which can be versed through a React app.',
-    },
-    {
-        thumbnail: '/works/gloria_romanus.PNG',
-        subtitle: 'Java Strategy Game',
-        title: 'Gloria Romanus',
-        desc: 'A civilization-like strategy game built with ArcGIS, Junit and Gradle. Complex game mechanics, saving and loading, simulated economy and AI. ',
+        link: 'https://github.com/marcusoyang/splunk-visualization',
     },
     {
         thumbnail: '/works/sigmund.PNG',
         subtitle: 'Online Live Chess Platform',
         title: 'Theseus',
         desc: 'A platform to play chess with friends hosted on Azure using Web PubSub and React.',
+        link: 'https://github.com/marcusoyang/theseus',
+    },
+    {
+        thumbnail: '/works/iprm.PNG',
+        subtitle: 'Blockchain Smart Contract & Web App',
+        title: 'IP Rights Management',
+        desc: 'An blockchain-based intellectual property rights management system using Solidity smart contracts, IPFS and a React frontend.',
+        link: 'https://github.com/COMP6452-IP3/project-2',
+    },
+    {
+        thumbnail: '/works/gloria_romanus.PNG',
+        subtitle: 'Java Strategy Game',
+        title: 'Gloria Romanus',
+        desc: 'A civilization-like strategy game built with ArcGIS, Junit and Gradle. Complex game mechanics, saving and loading, simulated economy and AI. ',
+        link: 'https://github.com/marcusoyang/gloria-romanus',
     },
     {
         thumbnail: '/works/maptime.PNG',
         subtitle: 'Python Flask Web App',
         title: 'Maptime',
         desc: 'A visualization tool that plots a given timeline onto a custom route using Google Maps API. ',
+    },
+
+    {
+        thumbnail: '/works/sigmund.PNG',
+        subtitle: 'Pytorch ML trained chess engine',
+        title: 'Sigmund',
+        desc: 'A neural network model trained using public Lichess evaluations which can be versed through a React app.',
+        link: 'https://github.com/marcusoyang/sigmund',
     },
 ];
 
@@ -95,6 +101,7 @@ const Works = () => {
                             subtitle={work.subtitle}
                             title={work.title}
                             desc={work.desc}
+                            link={work.link}
                         />
                     </GridItem>
                 ))}
