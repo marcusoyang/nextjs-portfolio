@@ -15,7 +15,7 @@ interface WorkCardProps {
     subtitle: string;
     title: string;
     desc: string;
-    link: string;
+    link?: string;
 }
 
 const WorkCard = (props: WorkCardProps) => {
