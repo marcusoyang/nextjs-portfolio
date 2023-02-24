@@ -6,7 +6,7 @@ export default function Document() {
         <Html lang='en'>
             <Head>
                 {/* eslint-disable-next-line @next/next/no-title-in-document-head */}
-                <meta property='og:image' content='https://marcuso.dev/' />
+                <meta property='og:image' content='https://ibb.co/jJtGfzV' />
                 <meta
                     property='og:title'
                     content="Marcus O'Yang - Portfolio Website"
