@@ -6,8 +6,11 @@ export default function Document() {
         <Html lang='en'>
             <Head>
                 {/* eslint-disable-next-line @next/next/no-title-in-document-head */}
-                <meta property='og:image' content='public/thumb.PNG' />
-                <meta property='og:title' content="Marcus O'Yang - Portfolio" />
+                <meta property='og:image' content='/thumb.PNG' />
+                <meta
+                    property='og:title'
+                    content="Marcus O'Yang - Portfolio Website"
+                />
                 <meta
                     property='og:description'
                     content='ReactJS portfolio website using NextJS, Chakra UI and ThreeJS'
