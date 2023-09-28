@@ -48,7 +48,7 @@ const Bio = () => {
         Worked at Sensoria as a Software Engineer.
       </BioText>
       <BioText>
-        <BioYear>2022</BioYear>
+        <BioYear>2023</BioYear>
         Completion of Bioinformatics Engineering (Honours) at the University of
         New South Wales (UNSW).
       </BioText>
